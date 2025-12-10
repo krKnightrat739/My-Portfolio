@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KR Corp — Home</title>
+  <style>
+    :root{
+      --accent: #ff0000; /* red glow */
+      --bg-dark: #071322;
+      --white: #ffffff;
+      --max-width: 1200px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;background:#000;color:var(--white)}
+
+    .hero{
+      position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;
+    }
+    .hero .bg{
+      position:absolute;inset:0;background:url('D:/KR/KR WEBSITE/GALLERY/background.jpg') center/cover no-repeat;z-index:0;
+    }
+    .hero .hero-overlay{
+      position:absolute;inset:0;background:linear-gradient(180deg, rgba(7,19,34,0) 0%, rgba(7,19,34,0.95) 80%);opacity:0;transition:opacity .25s linear;z-index:2;
+    }
+    .hero .center{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:28px;padding:40px;text-align:center;}
+
+    h1{font-size:clamp(24px,5vw,44px);letter-spacing:0.6px}
+    p.lead{max-width:720px;opacity:0.85}
+    .btn-ghost{background:transparent;border:none;color:var(--white);font-weight:600;font-size:18px;padding:10px 18px;cursor:pointer;}
+
+    .site-nav{
+      position:fixed;top:24px;right:28px;z-index:10;display:flex;gap:14px;align-items:center;transition:opacity 0.3s ease;
+    }
+    .nav-btn{background:transparent;border:none;color:var(--white);font-weight:600;cursor:pointer;padding:8px 12px}
+
+    .top-logo{
+      position:fixed;top:24px;left:28px;width:120px;height:auto;opacity:0;transform:translateY(-20px);transition:opacity .4s ease, transform .4s ease;z-index:11;
+    }
+    .top-logo.visible{opacity:1;transform:translateY(0)}
+
+    main{background:url('D:/KR/KR WEBSITE/GALLERY/site-bg.jpg') center/cover no-repeat;}
+    .container{max-width:var(--max-width);margin:0 auto;padding:80px 24px;}
+
+    .about-box{background:rgba(255,255,255,0.05);padding:36px;border-radius:16px;margin-bottom:40px;backdrop-filter:blur(6px)}
+
+    .concerns-grid{display:grid;gap:28px}
+    @media(min-width:920px){.concerns-grid{grid-template-columns:1fr 1fr}}
+    .concern-card{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;padding:20px;border-radius:12px;transition:transform .28s ease,box-shadow .28s ease;background:rgba(255,255,255,0.02);position:relative;}
+    .concern-card:hover{transform:translateY(-6px);box-shadow:0 0 25px rgba(255,0,0,0.3)}
+    .concern-card::after{content:"";position:absolute;inset:-2px;border-radius:14px;z-index:-1;opacity:0;transition:opacity .28s ease,filter .28s ease;background:radial-gradient(600px 200px at 10% 20%, rgba(255,0,0,0.15), rgba(255,0,0,0) 40%);}
+    .concern-card:hover::after{opacity:1;filter:blur(30px)}
+
+    .concern-logo img{width:80px;height:auto;object-fit:contain;}
+    .concern-card .right img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+    @media(max-width:920px){.concern-card{grid-template-columns:1fr}.concern-card .right img{height:200px}}
+
+    footer{text-align:center;padding:40px 0;color:rgba(255,255,255,0.8)}
+  </style>
+</head>
+<body>
+
+  <img src="D:/KR/KR WEBSITE/GALLERY/logo.png" alt="KR Corp logo" class="top-logo" id="topLogo">
+
+  <div class="hero" id="home">
+    <div class="bg"></div>
+    <div class="hero-overlay"></div>
+
+    <nav class="site-nav">
+      <button class="nav-btn" onclick="scrollToSection('about')">About</button>
+      <button class="nav-btn" onclick="scrollToSection('concerns')">Concerns</button>
+      <button class="nav-btn" onclick="scrollToSection('contact')">Contact</button>
+    </nav>
+
+    <div class="center">
+      <h1>KR KNIGHTRAT CORPORATION</h1>
+      <p class="lead">Innovating at the intersection of aviation, design, technology and lifestyle. We build brands, craft identities and engineer experiences for the future.</p>
+      <button class="btn-ghost" id="exploreBtn">Let's Explore</button>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section id="about" class="about-box">
+        <h2>About KR Corp</h2>
+        <p>KR KNIGHTRAT CORPORATION (KR Corp) is a multifaceted creative and engineering group with interests spanning brand solutions, aerospace concepts, hospitality, real estate and experiential ventures. We combine design thinking with technical execution to launch brands and services that scale globally.</p>
+      </section>
+
+      <section id="concerns">
+        <h2>All Concerns of KR Corp.</h2>
+        <div class="concerns-grid">
+          <article class="concern-card">
+            <div class="left">
+              <div class="concern-logo"><img src="D:/KR/KR WEBSITE/GALLERY/foring.png" alt="FORING"></div>
+              <div class="concern-about">FORING HELI SERVICE. A TOP CLASS SERVICE WHICH YOU CAN'T GET ANYWHERE.</div>
+            </div>
+            <div class="right"><img src="D:/KR/KR WEBSITE/GALLERY/BELL407.jpg" alt="FORING"></div>
+          </article>
+          <article class="concern-card">
+            <div class="left">
+              <div class="concern-logo"><img src="D:/KR/KR WEBSITE/GALLERY/aero-logo.png" alt="Aerospace"></div>
+              <div class="concern-about">Concept aircraft, helicopter design, unmanned systems and aerospace consultancy.</div>
+            </div>
+            <div class="right"><img src="D:/KR/KR WEBSITE/GALLERY/concern2.jpg" alt="Aerospace showcase"></div>
+          </article>
+          <article class="concern-card">
+            <div class="left">
+              <div class="concern-logo"><img src="D:/KR/KR WEBSITE/GALLERY/av8rs-logo.png" alt="AV8Rs"></div>
+              <div class="concern-about">Planespotting community, aviation media, and hospitality concepts (AV8Rs Cafe).</div>
+            </div>
+            <div class="right"><img src="D:/KR/KR WEBSITE/GALLERY/concern3.jpg" alt="AV8Rs showcase"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:48px;">
+        <h2>Contact</h2>
+        <p>For partnerships or collaborations — <a href="mailto:hello@krknightrat.com" style="color:var(--white);text-decoration:underline">hello@krknightrat.com</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>© KR KNIGHTRAT CORPORATION — All rights reserved.</footer>
+
+  <script>
+    function scrollToSection(id){
+      const el=document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth'});
+    }
+
+    const overlay=document.querySelector('.hero-overlay');
+    const bg=document.querySelector('.bg');
+    const logo=document.getElementById('topLogo');
+    function onScroll(){
+      const y=window.scrollY;
+      const trigger=window.innerHeight*0.25;
+      const opacity=Math.min(1,y/trigger);
+      overlay.style.opacity=opacity;
+      bg.style.transform=`scale(${1+Math.min(0.08,y/4000)}) translateY(${Math.min(60,y/10)}px)`;
+      if(y>trigger){logo.classList.add('visible');}else{logo.classList.remove('visible');}
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});
+  </script>
+</body>
+</html>
